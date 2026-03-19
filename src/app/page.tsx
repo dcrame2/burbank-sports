@@ -191,7 +191,7 @@ export default function Home() {
       {/* ─── HERO ─── */}
       <section className="relative min-h-screen flex items-end lg:items-center overflow-hidden bg-foreground">
         <Image
-          src="/images/storefront-close.jpg"
+          src="/images/storefront-front.jpg"
           alt="Burbank Sports storefront"
           fill
           className="object-cover opacity-30 lg:opacity-100 lg:object-right"
@@ -248,7 +248,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
                   href={PHONE_HREF}
-                  className="group inline-flex items-center justify-center gap-3 bg-primary text-white font-bold px-8 py-4 rounded-full text-lg hover:bg-primary-light transition-all shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.02]"
+                  className="group inline-flex items-center justify-center gap-3 bg-primary text-white font-bold px-6 py-3 rounded-full text-base sm:px-8 sm:py-4 sm:text-lg hover:bg-primary-light transition-all shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.02]"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
@@ -257,7 +257,7 @@ export default function Home() {
                 </a>
                 <a
                   href={`mailto:${EMAIL}?subject=Quote Request&body=Hi Burbank Sports,%0D%0A%0D%0AI'd like to request a quote for:%0D%0A%0D%0A`}
-                  className="inline-flex items-center justify-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-bold px-8 py-4 rounded-full text-lg hover:bg-white/20 transition-all"
+                  className="inline-flex items-center justify-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-bold px-6 py-3 rounded-full text-base sm:px-8 sm:py-4 sm:text-lg hover:bg-white/20 transition-all"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
@@ -372,7 +372,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href={PHONE_HREF}
-                className="inline-flex items-center justify-center gap-2 bg-white text-primary font-bold px-8 py-4 rounded-full text-lg hover:bg-blue-50 transition-all shadow-lg hover:scale-105"
+                className="inline-flex items-center justify-center gap-2 bg-white text-primary font-bold px-6 py-3 rounded-full text-base sm:px-8 sm:py-4 sm:text-lg hover:bg-blue-50 transition-all shadow-lg hover:scale-105"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
@@ -381,7 +381,7 @@ export default function Home() {
               </a>
               <a
                 href={`mailto:${EMAIL}?subject=Quote Request&body=Hi Burbank Sports,%0D%0A%0D%0AI'd like to request a quote for:%0D%0A%0D%0A`}
-                className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-white text-white font-bold px-8 py-4 rounded-full text-lg hover:bg-white/10 transition-all"
+                className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-white text-white font-bold px-6 py-3 rounded-full text-base sm:px-8 sm:py-4 sm:text-lg hover:bg-white/10 transition-all"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
@@ -434,7 +434,7 @@ export default function Home() {
             <div className="text-center mt-12">
               <a
                 href={PHONE_HREF}
-                className="inline-flex items-center gap-2 bg-primary text-white font-bold px-8 py-4 rounded-full text-lg hover:bg-primary-dark transition-all shadow-lg hover:scale-105"
+                className="inline-flex items-center gap-2 bg-primary text-white font-bold px-6 py-3 rounded-full text-base sm:px-8 sm:py-4 sm:text-lg hover:bg-primary-dark transition-all shadow-lg hover:scale-105"
               >
                 Order Your Custom Jacket
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -447,33 +447,73 @@ export default function Home() {
       </section>
 
       {/* ─── STOREFRONT ─── bg-white */}
-      <section className="relative py-24 bg-white">
+      <section className="relative py-24 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <AnimateOnScroll animation="fade-right">
-              <div className="relative aspect-video rounded-2xl overflow-hidden shadow-xl group">
+          <AnimateOnScroll animation="fade-up">
+            <div className="text-center mb-12">
+              <p className="text-primary font-semibold uppercase tracking-wider text-sm mb-2">
+                Our Shop
+              </p>
+              <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
+                The Home of Burbank Sports
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+                Serving the Chicagoland community from our shop on 79th Street since 1970.
+              </p>
+            </div>
+          </AnimateOnScroll>
+        </div>
+        {/* Scrolling image strip */}
+        <AnimateOnScroll animation="fade-up" delay={200}>
+          <div className="flex gap-4 overflow-x-auto gallery-scroll px-6 pb-4 snap-x snap-mandatory">
+            <div className="flex-none w-[85vw] sm:w-[60vw] lg:w-[500px] snap-center">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl group">
                 <Image
-                  src="/images/storefront-street.jpg"
-                  alt="Burbank Sports store exterior"
+                  src="/images/storefront-corner.jpg"
+                  alt="Burbank Sports store corner view"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 85vw, 500px"
                 />
               </div>
-            </AnimateOnScroll>
-            <AnimateOnScroll animation="fade-left">
-              <div className="relative aspect-video rounded-2xl overflow-hidden shadow-xl group">
+            </div>
+            <div className="flex-none w-[85vw] sm:w-[60vw] lg:w-[500px] snap-center">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl group">
+                <Image
+                  src="/images/storefront-close.jpg"
+                  alt="Burbank Sports storefront close up"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  sizes="(max-width: 768px) 85vw, 500px"
+                />
+              </div>
+            </div>
+            <div className="flex-none w-[85vw] sm:w-[60vw] lg:w-[500px] snap-center">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl group">
+                <Image
+                  src="/images/storefront-sign.jpg"
+                  alt="Burbank Sports street sign"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  sizes="(max-width: 768px) 85vw, 500px"
+                />
+              </div>
+            </div>
+            <div className="flex-none w-[85vw] sm:w-[60vw] lg:w-[500px] snap-center">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl group">
                 <Image
                   src="/images/ad-vintage.jpg"
                   alt="Burbank Sports vintage advertisement"
                   fill
                   className="object-contain bg-muted group-hover:scale-105 transition-transform duration-700"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 85vw, 500px"
                 />
               </div>
-            </AnimateOnScroll>
+            </div>
+            {/* Spacer so last card can scroll to center */}
+            <div className="flex-none w-4" />
           </div>
-        </div>
+        </AnimateOnScroll>
       </section>
 
       {/* ─── LEGACY / ABOUT THE FOUNDER ─── bg-muted */}
@@ -781,7 +821,7 @@ export default function Home() {
           <AnimateOnScroll animation="fade-up" delay={300}>
             <a
               href={PHONE_HREF}
-              className="inline-flex items-center gap-3 bg-white text-primary font-bold px-10 py-5 rounded-full text-xl hover:bg-blue-50 transition-all shadow-2xl hover:scale-105 cta-pulse"
+              className="inline-flex items-center gap-3 bg-white text-primary font-bold px-8 py-4 rounded-full text-lg sm:px-10 sm:py-5 sm:text-xl hover:bg-blue-50 transition-all shadow-2xl hover:scale-105 cta-pulse"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
