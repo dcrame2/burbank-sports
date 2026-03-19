@@ -161,7 +161,7 @@ export default function Home() {
           src="/images/storefront-front.jpg"
           alt="Burbank Sports storefront"
           fill
-          className="object-cover opacity-30 lg:opacity-100 lg:object-right"
+          className="object-cover object-right opacity-30 lg:opacity-100"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-r from-foreground via-foreground/95 to-foreground/40 lg:via-foreground/80 lg:to-transparent" />
@@ -258,8 +258,9 @@ export default function Home() {
       </section>
 
       {/* ─── TRUST BAR ─── */}
-      <section className="bg-primary-dark text-white py-4">
-        <div className="max-w-7xl mx-auto px-6 flex flex-wrap items-center justify-center gap-x-12 gap-y-2 text-sm font-medium">
+      <section className="bg-primary-dark text-white py-3 overflow-hidden">
+        {/* Desktop: centered flex */}
+        <div className="hidden md:flex max-w-7xl mx-auto px-6 items-center justify-center gap-x-12 text-sm font-medium">
           <span className="flex items-center gap-2">
             <svg className="w-4 h-4 text-blue-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             50+ Years in Business
@@ -276,6 +277,35 @@ export default function Home() {
             <svg className="w-4 h-4 text-blue-300" fill="currentColor" viewBox="0 0 24 24"><path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/></svg>
             Free Delivery Available
           </span>
+        </div>
+        {/* Mobile: scrolling marquee */}
+        <div className="md:hidden relative">
+          <div className="flex animate-marquee whitespace-nowrap text-sm font-medium">
+            {[...Array(2)].map((_, loop) => (
+              <div key={loop} className="flex shrink-0 items-center">
+                <span className="flex items-center gap-2 px-6">
+                  <svg className="w-3.5 h-3.5 text-blue-300 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  50+ Years in Business
+                </span>
+                <span className="text-blue-400/40 px-2">/</span>
+                <span className="flex items-center gap-2 px-6">
+                  <svg className="w-3.5 h-3.5 text-blue-300 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                  Local Schools &amp; Teams
+                </span>
+                <span className="text-blue-400/40 px-2">/</span>
+                <span className="flex items-center gap-2 px-6">
+                  <svg className="w-3.5 h-3.5 text-blue-300 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4v2h16V4zm1 10v-2l-1-5H4l-1 5v2h1v6h10v-6h4v6h2v-6h1zm-9 4H6v-4h6v4z"/></svg>
+                  Family Owned
+                </span>
+                <span className="text-blue-400/40 px-2">/</span>
+                <span className="flex items-center gap-2 px-6">
+                  <svg className="w-3.5 h-3.5 text-blue-300 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/></svg>
+                  Free Delivery
+                </span>
+                <span className="text-blue-400/40 px-2">/</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

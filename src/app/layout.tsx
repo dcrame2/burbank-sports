@@ -48,21 +48,12 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "Burbank Sports Inc.",
-    images: [
-      {
-        url: "/opengraph-image",
-        width: 1200,
-        height: 630,
-        alt: "Burbank Sports Inc. — Custom Shirts, Jerseys & Sportswear in Burbank, IL",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Burbank Sports | Custom Shirts, Jerseys & Sportswear",
     description:
       "Custom shirts, jerseys, team uniforms, letterman jackets & more. Family owned since 1970 in Burbank, IL. Call (708) 422-7777.",
-    images: ["/twitter-image"],
   },
 };
 
