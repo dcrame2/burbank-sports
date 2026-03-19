@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { AnimateOnScroll, StaggerChildren } from "@/components/animate-on-scroll";
 import { FloatingSportsIcons, FloatingSportsIconsLight } from "@/components/floating-sports";
+import { Navbar } from "@/components/navbar";
 
 const PHONE = "(708) 422-7777";
 const PHONE_HREF = "tel:+17084227777";
@@ -152,41 +153,7 @@ export default function Home() {
   return (
     <>
       {/* ─── NAVIGATION ─── */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-blue-100 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <a href="#" className="flex items-center gap-3">
-              <Image
-                src="/images/logo-vintage.jpg"
-                alt="Burbank Sports logo"
-                width={140}
-                height={50}
-                className="h-10 w-auto"
-              />
-            </a>
-            <div className="hidden md:flex items-center gap-8 text-sm font-medium text-foreground">
-              <a href="#services" className="hover:text-primary transition-colors">
-                Services
-              </a>
-              <a href="#gallery" className="hover:text-primary transition-colors">
-                Gallery
-              </a>
-              <a href="#legacy" className="hover:text-primary transition-colors">
-                Our Story
-              </a>
-              <a href="#location" className="hover:text-primary transition-colors">
-                Find Us
-              </a>
-            </div>
-            <a
-              href={PHONE_HREF}
-              className="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary-dark transition-colors cta-pulse"
-            >
-              Call Now
-            </a>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* ─── HERO ─── */}
       <section className="relative min-h-screen flex items-end lg:items-center overflow-hidden bg-foreground">
@@ -694,58 +661,103 @@ export default function Home() {
             </div>
           </AnimateOnScroll>
 
-          {/* Contact cards row */}
-          <AnimateOnScroll animation="fade-up">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-              {/* Phone card */}
-              <a
-                href={PHONE_HREF}
-                className="group bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:border-primary-light/30 hover:-translate-y-1 transition-all duration-300 text-center"
-              >
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary-light text-white flex items-center justify-center mx-auto mb-3">
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
-                  </svg>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14">
+            {/* Left side — all info */}
+            <AnimateOnScroll animation="fade-right">
+              <div className="rounded-2xl overflow-hidden shadow-lg h-full flex flex-col">
+                {/* Blue gradient header */}
+                <div className="bg-gradient-to-br from-primary to-primary-light p-6 sm:p-8 text-white">
+                  <h3 className="text-xl font-bold mb-1">Get in Touch</h3>
+                  <p className="text-blue-200 text-sm">We&apos;d love to hear from you</p>
                 </div>
-                <p className="text-xs text-muted-foreground uppercase tracking-wider font-semibold mb-1">Phone</p>
-                <p className="text-lg font-bold text-primary group-hover:text-primary-dark transition-colors">{PHONE}</p>
-              </a>
-              {/* Email card */}
-              <a
-                href={`mailto:${EMAIL}`}
-                className="group bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:border-primary-light/30 hover:-translate-y-1 transition-all duration-300 text-center"
-              >
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary-light text-white flex items-center justify-center mx-auto mb-3">
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                  </svg>
-                </div>
-                <p className="text-xs text-muted-foreground uppercase tracking-wider font-semibold mb-1">Email</p>
-                <p className="text-sm font-bold text-primary group-hover:text-primary-dark transition-colors break-all">{EMAIL}</p>
-              </a>
-              {/* Address card */}
-              <a
-                href={MAPS_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:border-primary-light/30 hover:-translate-y-1 transition-all duration-300 text-center"
-              >
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-red to-red-dark text-white flex items-center justify-center mx-auto mb-3">
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-                  </svg>
-                </div>
-                <p className="text-xs text-muted-foreground uppercase tracking-wider font-semibold mb-1">Address</p>
-                <p className="text-sm font-bold text-foreground">{ADDRESS}</p>
-                <p className="text-xs text-primary font-medium mt-1">Open in Google Maps &rarr;</p>
-              </a>
-            </div>
-          </AnimateOnScroll>
 
-          {/* Map + Hours side by side */}
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-12">
-            <AnimateOnScroll animation="fade-right" className="lg:col-span-3">
-              <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[16/10] h-full min-h-[360px]">
+                {/* Contact rows */}
+                <div className="bg-white p-5 sm:p-6 space-y-0 divide-y divide-gray-100">
+                  <a href={PHONE_HREF} className="flex items-center gap-4 group py-4 first:pt-0">
+                    <div className="w-10 h-10 shrink-0 rounded-full bg-accent text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                      </svg>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">{PHONE}</p>
+                      <p className="text-xs text-muted-foreground">Tap to call</p>
+                    </div>
+                    <svg className="w-4 h-4 text-gray-300 group-hover:text-primary transition-colors shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                  <a href={`mailto:${EMAIL}`} className="flex items-center gap-4 group py-4">
+                    <div className="w-10 h-10 shrink-0 rounded-full bg-accent text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                      </svg>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm font-bold text-foreground group-hover:text-primary transition-colors truncate">{EMAIL}</p>
+                      <p className="text-xs text-muted-foreground">Send us an email</p>
+                    </div>
+                    <svg className="w-4 h-4 text-gray-300 group-hover:text-primary transition-colors shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                  <a href={MAPS_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group py-4 last:pb-0">
+                    <div className="w-10 h-10 shrink-0 rounded-full bg-red-accent text-red flex items-center justify-center group-hover:bg-red group-hover:text-white transition-colors">
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                      </svg>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm font-bold text-foreground group-hover:text-primary transition-colors">{ADDRESS}</p>
+                      <p className="text-xs text-primary font-medium">Get directions &rarr;</p>
+                    </div>
+                    <svg className="w-4 h-4 text-gray-300 group-hover:text-primary transition-colors shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                </div>
+
+                {/* Store hours */}
+                <div className="bg-muted/50 p-5 sm:p-6 flex-1">
+                  <h3 className="text-xs font-bold text-muted-foreground mb-3 flex items-center gap-2 uppercase tracking-wider">
+                    <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
+                    </svg>
+                    Store Hours
+                  </h3>
+                  <div className="space-y-1.5">
+                    {hours.map((h) => (
+                      <div
+                        key={h.day}
+                        className={`flex justify-between text-sm ${
+                          h.time === "Closed" ? "text-red font-semibold" : "text-muted-foreground"
+                        }`}
+                      >
+                        <span className="font-medium text-foreground text-sm">{h.day}</span>
+                        <span>{h.time}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Facebook footer */}
+                <a
+                  href={FACEBOOK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 bg-white text-primary hover:bg-accent font-semibold transition-colors text-sm py-4 border-t border-gray-100"
+                >
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                  </svg>
+                  Follow us on Facebook
+                </a>
+              </div>
+            </AnimateOnScroll>
+
+            {/* Right side — map */}
+            <AnimateOnScroll animation="fade-left" delay={200}>
+              <div className="relative rounded-2xl overflow-hidden shadow-xl h-full min-h-[400px]">
                 <iframe
                   src={MAPS_EMBED_URL}
                   width="100%"
@@ -757,46 +769,6 @@ export default function Home() {
                   title="Burbank Sports location"
                   className="absolute inset-0"
                 />
-              </div>
-            </AnimateOnScroll>
-            <AnimateOnScroll animation="fade-left" delay={200} className="lg:col-span-2">
-              <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 h-full flex flex-col justify-between">
-                <div>
-                  <h3 className="text-lg font-bold text-foreground mb-5 flex items-center gap-2">
-                    <svg className="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
-                    </svg>
-                    Store Hours
-                  </h3>
-                  <div className="space-y-3">
-                    {hours.map((h) => (
-                      <div
-                        key={h.day}
-                        className={`flex justify-between items-center text-sm pb-3 border-b border-gray-50 last:border-0 last:pb-0 ${
-                          h.time === "Closed"
-                            ? "text-red"
-                            : "text-muted-foreground"
-                        }`}
-                      >
-                        <span className="font-medium text-foreground">
-                          {h.day}
-                        </span>
-                        <span className="font-semibold">{h.time}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <a
-                  href={FACEBOOK}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 text-primary hover:text-primary-dark font-semibold transition-colors mt-6 bg-accent/50 rounded-xl py-3 hover:bg-accent"
-                >
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                  </svg>
-                  Follow us on Facebook
-                </a>
               </div>
             </AnimateOnScroll>
           </div>

@@ -13,37 +13,56 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://burbanksports.com"),
-  title: "Burbank Sports Inc. | Custom Uniforms, Letterman Jackets & Trophies Since 1970",
+  metadataBase: new URL(
+    process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+      : "https://burbank-sports.vercel.app"
+  ),
+  title:
+    "Burbank Sports Inc. | Custom Shirts, Jerseys & Sportswear in Burbank, IL",
   description:
-    "Family owned since 1970, Burbank Sports is Chicagoland's team specialist. Custom uniforms, letterman jackets, silk screen printing, monogramming, trophies & awards. Call (708) 422-7777.",
+    "Burbank Sports makes custom shirts, jerseys, team uniforms, letterman jackets, hoodies & sportswear near Chicago. Silk screen printing, embroidery, trophies & awards. Family owned since 1970. Call (708) 422-7777.",
   keywords: [
+    "custom shirts Burbank IL",
+    "custom jerseys Chicago",
+    "team uniforms near me",
+    "custom sportswear Chicagoland",
+    "letterman jackets Chicago",
+    "silk screen printing Burbank",
+    "custom t-shirts south suburbs Chicago",
+    "custom hoodies Illinois",
+    "school uniforms Burbank IL",
+    "embroidery near me",
+    "trophy shop Burbank",
+    "custom team apparel",
+    "screen printing near me",
+    "monogramming Burbank IL",
+    "sports awards and plaques",
+    "custom clothing Burbank",
     "Burbank Sports",
-    "custom uniforms",
-    "letterman jackets",
-    "trophies",
-    "awards",
-    "silk screen printing",
-    "monogramming",
-    "Burbank IL",
-    "Chicagoland sports",
-    "team uniforms",
-    "custom clothing",
-    "sporting goods",
   ],
   openGraph: {
-    title: "Burbank Sports Inc. | Chicagoland's Team Specialist Since 1970",
+    title: "Burbank Sports | Custom Shirts, Jerseys & Team Uniforms",
     description:
-      "Custom uniforms, letterman jackets, trophies, silk screen printing & more. Family owned and operated for over 50 years.",
+      "Custom shirts, jerseys, letterman jackets, hoodies & sportswear made to order. Silk screen printing, embroidery, trophies & awards in Burbank, IL. Since 1970.",
     type: "website",
     locale: "en_US",
     siteName: "Burbank Sports Inc.",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Burbank Sports Inc. — Custom Shirts, Jerseys & Sportswear in Burbank, IL",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Burbank Sports Inc. | Custom Uniforms & Trophies Since 1970",
+    title: "Burbank Sports | Custom Shirts, Jerseys & Sportswear",
     description:
-      "Chicagoland's team specialist. Custom uniforms, letterman jackets, trophies & awards. Call (708) 422-7777.",
+      "Custom shirts, jerseys, team uniforms, letterman jackets & more. Family owned since 1970 in Burbank, IL. Call (708) 422-7777.",
+    images: ["/twitter-image"],
   },
 };
 

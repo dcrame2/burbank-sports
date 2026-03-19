@@ -61,22 +61,41 @@ interface FloatingIcon {
   rotation: number;
 }
 
+function generateSpacedIcons(count: number, sizeMin: number, sizeMax: number, opacityMin: number, opacityMax: number): FloatingIcon[] {
+  const icons: FloatingIcon[] = [];
+  // Divide the area into a grid to prevent overlap
+  const cols = Math.ceil(Math.sqrt(count * 2));
+  const rows = Math.ceil(count / cols);
+  const cellW = 100 / cols;
+  const cellH = 100 / rows;
+
+  for (let i = 0; i < count; i++) {
+    const col = i % cols;
+    const row = Math.floor(i / cols);
+    // Place within cell with some randomness but stay inside the cell
+    const x = col * cellW + Math.random() * cellW * 0.6 + cellW * 0.2;
+    const y = row * cellH + Math.random() * cellH * 0.6 + cellH * 0.2;
+
+    icons.push({
+      id: i,
+      iconIndex: Math.floor(Math.random() * sportsIcons.length),
+      x: Math.min(x, 95),
+      y: Math.min(y, 95),
+      size: sizeMin + Math.random() * (sizeMax - sizeMin),
+      duration: 15 + Math.random() * 20,
+      delay: Math.random() * -20,
+      opacity: opacityMin + Math.random() * (opacityMax - opacityMin),
+      rotation: Math.random() * 360,
+    });
+  }
+  return icons;
+}
+
 export function FloatingSportsIcons({ count = 12, className = "" }: { count?: number; className?: string }) {
   const [icons, setIcons] = useState<FloatingIcon[]>([]);
 
   useEffect(() => {
-    const generated: FloatingIcon[] = Array.from({ length: count }, (_, i) => ({
-      id: i,
-      iconIndex: Math.floor(Math.random() * sportsIcons.length),
-      x: Math.random() * 100,
-      y: Math.random() * 100,
-      size: 16 + Math.random() * 24,
-      duration: 15 + Math.random() * 20,
-      delay: Math.random() * -20,
-      opacity: 0.04 + Math.random() * 0.06,
-      rotation: Math.random() * 360,
-    }));
-    setIcons(generated);
+    setIcons(generateSpacedIcons(count, 16, 32, 0.04, 0.08));
   }, [count]);
 
   if (icons.length === 0) return null;
@@ -112,18 +131,7 @@ export function FloatingSportsIconsLight({ count = 10, className = "" }: { count
   const [icons, setIcons] = useState<FloatingIcon[]>([]);
 
   useEffect(() => {
-    const generated: FloatingIcon[] = Array.from({ length: count }, (_, i) => ({
-      id: i,
-      iconIndex: Math.floor(Math.random() * sportsIcons.length),
-      x: Math.random() * 100,
-      y: Math.random() * 100,
-      size: 20 + Math.random() * 30,
-      duration: 15 + Math.random() * 20,
-      delay: Math.random() * -20,
-      opacity: 0.06 + Math.random() * 0.08,
-      rotation: Math.random() * 360,
-    }));
-    setIcons(generated);
+    setIcons(generateSpacedIcons(count, 20, 36, 0.05, 0.1));
   }, [count]);
 
   if (icons.length === 0) return null;
