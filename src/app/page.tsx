@@ -2,6 +2,7 @@ import Image from "next/image";
 import { AnimateOnScroll, StaggerChildren } from "@/components/animate-on-scroll";
 import { FloatingSportsIcons, FloatingSportsIconsLight } from "@/components/floating-sports";
 import { Navbar } from "@/components/navbar";
+import { ImageGallery } from "@/components/image-lightbox";
 
 const PHONE = "(708) 422-7777";
 const PHONE_HREF = "tel:+17084227777";
@@ -147,7 +148,7 @@ const reviews = [
 ];
 
 const GOOGLE_REVIEWS_LINK =
-  "https://www.google.com/maps/place/Burbank+Sports/@41.7536,-87.7794,17z/data=!4m8!3m7!1s0x0:0x0!8m2!3d41.7536!4d-87.7794!9m1!1b1!16s";
+  "https://www.google.com/search?q=Burbank+Sports+Inc+5500+W+79th+St+Burbank+IL+reviews";
 
 export default function Home() {
   return (
@@ -408,25 +409,9 @@ export default function Home() {
               </p>
             </div>
           </AnimateOnScroll>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            <StaggerChildren animation="zoom-in" staggerDelay={80}>
-              {jacketGallery.map((jacket, i) => (
-                <div
-                  key={i}
-                  className="group relative aspect-[3/4] rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:rotate-1"
-                >
-                  <Image
-                    src={jacket.src}
-                    alt={jacket.alt}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                    sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 20vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-              ))}
-            </StaggerChildren>
-          </div>
+          <AnimateOnScroll animation="fade-up" delay={100}>
+            <ImageGallery images={jacketGallery} />
+          </AnimateOnScroll>
           <AnimateOnScroll animation="fade-up" delay={300}>
             <div className="text-center mt-12">
               <a
