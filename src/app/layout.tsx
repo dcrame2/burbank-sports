@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     "Burbank Sports",
   ],
   openGraph: {
-    title: "Burbank Sports | Custom Shirts, Jerseys & Team Uniforms",
+    title: "Burbank Sports | Custom Shirts, Jerseys & Sportswear in Burbank, IL",
     description:
       "Custom shirts, jerseys, letterman jackets, hoodies & sportswear made to order. Silk screen printing, embroidery, trophies & awards in Burbank, IL. Since 1970.",
     type: "website",
